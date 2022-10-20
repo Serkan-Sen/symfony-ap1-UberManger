@@ -16,7 +16,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
  */
 class RestaurantRepository extends ServiceEntityRepository
 {
-    public const PAGINATOR_PER_PAGE = 2;
+    public const PAGINATOR_PER_PAGE = 4;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Restaurant::class);
