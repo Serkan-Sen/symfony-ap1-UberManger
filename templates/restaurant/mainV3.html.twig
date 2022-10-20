@@ -16,6 +16,7 @@
               {% endif %}
               {% if is_granted('ROLE_USER') %}
               <a class="btn btn-white shadow-warning text-warning" href="{{ path('app_profile') }}" type="submit"> <i class="fas fa-user me-2"></i>Profil</a>
+              <a class="btn btn-white shadow-warning text-warning" href="{{ path('app_logout') }}" type="submit"> <i class="fas fa-user me-2"></i>Log out</a>
               {% endif %}
           </div>
         </div>

@@ -3,9 +3,8 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-{{ form_start(registrationForm) }}
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">Uber Manger</span></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="{{ path('app_index') }}"><img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">Uber Manger</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
@@ -17,91 +16,86 @@
           </div>
         </div>
 </nav>
+{{ form_start(registrationForm) }}
+
     <section class="h-100 h-custom gradient-custom-2">
     <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12">
-            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                <div class="card-body p-0">
-                    <div class="row g-0">
-                        <div class="col-lg-6">
-                            <div class="p-5">
-    
-                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://cdn.pixabay.com/photo/2016/10/04/13/05/name-1714231_960_720.png"
+                class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                                <!-- Username input -->
-                                <div class="form-outline mb-4">
-                                    {{ form_row(registrationForm.username, {
-                                        'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Username'} 
-                                    }) }}
-                                </div>
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        {{ form_row(registrationForm.username, {
+                        'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Username'} 
+                        }) }}
+                    </div>
 
-                                <div class="row">
-                                    <!-- Last name input -->
-                                    <div class="col-md-6 mb-4 pb-2">
-                                        <div class="form-outline">
-                                            {{ form_row(registrationForm.nom,{
-                                                'attr': {'class': 'form-control form-control-lg', 'placeholder': 'LAST NAME'}
-                                            }) }}
-                                        </div>
-                                    </div>
+                    <div class="row">
+                        <!-- Last name input -->
+                        <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                                {{ form_row(registrationForm.nom,{
+                                    'attr': {'class': 'form-control form-control-lg', 'placeholder': 'LAST NAME'}
+                                }) }}
+                            </div>
+                        </div>
 
-                                    <!-- First name input -->
-                                    <div class="col-md-6 mb-4 pb-2">
-                                        <div class="form-outline">
-                                            {{ form_row(registrationForm.prenom,{
-                                                'attr': {'class': 'form-control form-control-lg','placeholder': 'FIRST NAME'}
-                                            }) }}
-                                        </div>
-                                    </div>
-                                </div>
-                        
-                                <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    {{ form_row(registrationForm.email, {
-                                        'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Your E-mail : EXAMPLE@gmail.com'}
-                                    }) }}
-                                </div>
-
-
-                                <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    {{ form_row(registrationForm.password.first,  {
-                                        'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Password '} 
-                                    }) }}
-                                </div>
-
-                                <!-- Verify Password input -->
-                                <div class="form-outline mb-4">
-                                   {{ form_row(registrationForm.password.second, {
-                                       'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Confirm Password'},
-                                        label: 'Confirm Password :'
-                                   }) }}
-                                </div>
-
-                                <!-- AgreeTerms -->
-                                <div class="form-check d-flex justify-content-center mb-5">
-                                    <div class="form-check">
-                                        {{ form_row(registrationForm.agreeTerms, {
-                                            'attr': {'class': 'form-check-input me-2'},
-                                            label: ' I agree all statements in Terms of service'
-                                        }) }}
-                                    </div>
-                                </div>
-
-
-
-                                <br>
-                                <input type="submit" class="btn btn-primary btn-lg btn-block" value='Register'>
-
-                                <!-- Have already an account -->
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ path('app_login') }}"
-                                class="fw-bold text-body"><u>Login here</u></a></p>
-
+                        <!-- First name input -->
+                        <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                                {{ form_row(registrationForm.prenom,{
+                                    'attr': {'class': 'form-control form-control-lg','placeholder': 'FIRST NAME'}
+                                }) }}
                             </div>
                         </div>
                     </div>
-                </div>
+                                
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        {{ form_row(registrationForm.email, {
+                            'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Your E-mail : EXAMPLE@gmail.com'}
+                        }) }}
+                    </div>
+
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        {{ form_row(registrationForm.password.first,  {
+                            'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Password '} 
+                        }) }}
+                    </div>
+
+                    <!-- Verify Password input -->
+                    <div class="form-outline mb-4">
+                        {{ form_row(registrationForm.password.second, {
+                            'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Confirm Password'},
+                            label: 'Confirm Password :'
+                         }) }}
+                    </div>
+
+                    <!-- AgreeTerms -->
+                    <div class="form-check d-flex justify-content-center mb-5">
+                        <div class="form-check">
+                            {{ form_row(registrationForm.agreeTerms, {
+                                'attr': {'class': 'form-check-input me-2'},
+                                label: ' I agree all statements in Terms of service'
+                            }) }}
+                        </div>
+                    </div>
+
+
+
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value='Register'>
+
+                    <!-- Have already an account -->
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ path('app_login') }}"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
             </div>
         <div>
     </div>

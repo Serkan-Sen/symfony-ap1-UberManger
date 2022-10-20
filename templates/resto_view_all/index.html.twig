@@ -35,9 +35,6 @@
                         <a class="page-link" href="{{ path('app_resto_view_all', {  offset: previous }) }}" tabindex="-1" aria-disabled="true"><span aria-hidden="true">&laquo;</span></a>
                     {% endif %}
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
                     {% if next < restaurants|length %}
                         <a class="page-link" href="{{ path('app_resto_view_all', {  offset: next }) }}"><span aria-hidden="true">&raquo;</span></a>

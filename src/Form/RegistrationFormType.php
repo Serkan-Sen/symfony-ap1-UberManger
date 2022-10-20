@@ -31,27 +31,27 @@ class RegistrationFormType extends AbstractType
                 new Regex([
                    
                     'pattern'=>'/[A-Z]/',
-                    'match'=> false,
+                    'match'=> true,
                     'message'=> 'Your password should contain a UpperCase letter',
                     
                 ]),
                 new Regex([
                     
                     'pattern'=>'/[a-z]/',
-                    'match'=> false,
+                    'match'=> true,
                     'message'=> 'Your password should contain a LowerCase letter',
                 ]),
                 new Regex([
                     
                     'pattern'=>'/[\d]/',
-                    'match'=> false,
+                    'match'=> true,
                     'message'=> 'Your password should contain a digit',
                        
                 ]),
                 new Regex([
                     
                     'pattern'=>'/[!?#]/',
-                    'match'=>false,
+                    'match'=>true,
                     'message'=> 'Your password should contain a Non-Word character',
                     
                 ]),
