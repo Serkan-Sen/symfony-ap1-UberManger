@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% use '/restaurant/index.html.twig'%}
+{% use '/restaurant/main_restaux.html.twig'%}
+{% block title %}Liste des Restaurants!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<main class="main" id="top">   
+    {% include '/restaurant/mainV3.html.twig' %}
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+
+    <section id="testimonial">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-lg-7 mx-auto text-center mb-6">
+                    <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">All Restaurants</h5>
+                </div>
+            </div>
+            
+            <div class="row gx-2">          
+                {% for restaurant in restaurants %} {% include '/restaurant/index.html.twig' %}{% endfor %}
+            </div>
+            
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item ">
+                    {% if previous >= 0 %}
+                        <a class="page-link" href="{{ path('app_resto_view_all', {  offset: previous }) }}" tabindex="-1" aria-disabled="true">Previous</a>
+                    {% endif %}
+                    </li>
+                    <li class="page-item">
+                    {% if next < restaurants|length %}
+                        <a class="page-link" href="{{ path('app_resto_view_all', {  offset: next }) }}">Next</a>
+                    {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </div><!-- end of .container-->
+
+    </section>
+      
+            
+            
+       
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+
+
+<script src="{{ asset('vendors/is/is.min.js') }}"></script>
+<script src="{{ asset('https://polyfill.io/v3/polyfill.min.js?features=window.scroll') }}"></script>
+<script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
+<script src="{{ asset('assets/js/theme.js') }}"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+{% endblock %}
